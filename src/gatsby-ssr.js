@@ -19,7 +19,7 @@ export function onRenderBody({ setPostBodyComponents }, options){
 	setPostBodyComponents([
 		<script
 			key='polyfill-io'
-			src={`https://cdn.polyfill.io/v2/polyfill.min.js${args}`}
+			src={`https://cdn.polyfill.io/v3/polyfill.min.js${args}`}
 		/>
 	])
 }
