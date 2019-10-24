@@ -32,7 +32,23 @@ plugins: [
    {
       resolve: `gatsby-plugin-polyfill-io`,
       options: {
-         features: [`Array.prototype.map`, `fetch`]
+         features: [`Array.prototype.map`, `fetch`],
+      },
+   },
+]
+```
+
+Additional options:
+
+- `minified`: Request a minified polyfill bundle (default: `true`)
+
+```javascript
+plugins: [
+   {
+      resolve: `gatsby-plugin-polyfill-io`,
+      options: {
+         features: `default`,
+         minified: false
       },
    },
 ]

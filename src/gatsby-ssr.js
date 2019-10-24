@@ -1,25 +1,32 @@
 import React from 'react'
 
-export function onRenderBody({ setPostBodyComponents }, options){
-	let args = []
+const defaultOptions = {
+	minified: true
+}
+
+export function onRenderBody({ setPostBodyComponents }, pluginOptions){
+	const { minified, plugins, ...options } = Object.assign(pluginOptions, defaultOptions)
+
+	const args = []
+
 	for (let i in options) {
-		if (i === 'plugins') continue
 		let opt = options[i]
 		if (Array.isArray(opt)) {
 			opt = opt.join(`,`)
 		}
 		args.push(`${i}=${opt}`)
 	}
+
 	if (args.length) {
 		args = `?${args.join(`&`)}`
-	}
-	else {
+	} else {
 		args = ``
 	}
+
 	setPostBodyComponents([
 		<script
 			key='polyfill-io'
-			src={`https://cdn.polyfill.io/v3/polyfill.min.js${args}`}
+			src={`https://cdn.polyfill.io/v3/polyfill${minified ? '.min' : ''}.js${args}`}
 		/>
 	])
 }
