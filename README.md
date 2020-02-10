@@ -1,39 +1,5 @@
-# gatsby-plugin-polyfill-io
+# legacy-gatsby-plugin-polyfill-io
 
-A Gatsby plugin to polyfill your site with [Polyfill.io](https://polyfill.io/v2/docs/).
+**DO NOT USE**
 
-## Installation
-
-With npm:
-
-```bash
-npm install --save gatsby-plugin-polyfill-io
-```
-
-Or with Yarn:
-
-```bash
-yarn add gatsby-plugin-polyfill-io
-```
-
-## Implementation
-
-```javascript
-// In your gatsby-config.js
-plugins: [`gatsby-plugin-polyfill-io`]
-```
-
-## Options
-
-To include [Polyfill.io options](https://polyfill.io/v2/docs/api):
-
-```javascript
-plugins: [
-   {
-      resolve: `gatsby-plugin-polyfill-io`,
-      options: {
-         features: [`Array.prototype.map`, `fetch`]
-      },
-   },
-]
-```
+Now part of [escalade](https://github.com/escaladesports/escalade-internal/tree/master/packages/gatsby-plugin-polyfill-io) monorepo.
